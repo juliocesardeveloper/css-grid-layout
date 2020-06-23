@@ -1,0 +1,33 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.container {
+    display: grid;
+    /*grid-template-columns: 25% 50% 25%;*/
+    /*grid-template-rows: 300px 300px;*/
+    /* grid-template: 300px 100px 100px / 50% 200px 100px; */
+    /* grid-template: 300px 100px 100px / 1fr 1fr 1fr; */
+    /* grid-template: 300px 100px 100px / auto auto auto; */
+    /* grid-template: 300px 100px 100px / repeat(3, 1fr); */
+    grid-template: 300px 100px 100px / repeat(3, minmax(200px, 1fr));
+    /* grid-column-gap: 10px; */
+    /* grid-row-gap: 10px;   */
+    grid-gap: 10px 100px;
+}
+.item {
+    background: darkgray;
+    padding: 10px;
+    border: 1px solid black;
+}
+.item:nth-of-type(4) {
+    background: blueviolet;
+    overflow: auto;
+    /* display: subgrid; */
+    /* display: inline-grid; */
+    display: grid;
+    grid-template: 50px 50px 50px / 200px 200px 200px;
+}
+.item .item {
+    background: gold;
+}
