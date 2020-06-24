@@ -1,0 +1,49 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.container {
+    display: grid;
+    grid-template-columns: [start] 1fr [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [end];
+    grid-template-rows: [start] 1fr [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [line7] 1fr [end];
+    /* grid-template: filas / columnas; */
+    grid-gap: 10px;
+    height: 100vh;
+}
+.item {
+    background: darkgray;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.item:nth-of-type(1) {
+    background: greenyellow;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.item:nth-of-type(2) {
+    background: greenyellow;
+    grid-column: start / line3;
+    grid-row: line5 / end;
+}
+.item:nth-of-type(3) {
+    background: greenyellow;
+    grid-column: line3 / line5;
+    grid-row: line5 / end;
+}
+.item:nth-of-type(4) {
+    background: greenyellow;
+    grid-column: line5 / end;
+    grid-row: line5 / line7;
+}
+.item:nth-of-type(5) {
+    background: greenyellow;
+    grid-column: line5 / line6;
+    grid-row: line7 / end;
+}
+.item:nth-of-type(6) {
+    background: greenyellow;
+    grid-column: line6 / end;
+    grid-row: line7 / end;
+}
+
