@@ -1,0 +1,43 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.container {
+    display: grid;
+    grid-template-columns: [start] 1fr [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [end];
+    grid-template-rows: [start] 200px [line1] 200px [end];
+    /* grid-template: filas / columnas; */
+    grid-gap: 5px;
+    height: 100vh;
+    /* grid-auto-flow: row; Esta propiedad es aplicada automáticamanete a los nuevos elementos, su valor por defecto es row */
+    grid-auto-flow: column; /*Así se puede modificar el valor por defecto de los nuevos elementos */
+    grid-auto-columns: 200px 200px 200px 200px; /*se agregan tantos tamaños como elementos sean*/
+    grid-auto-rows: 50px 100px;
+}
+.item {
+    background: greenyellow;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.item:nth-of-type(1) {
+    
+    grid-column: start / span 3;
+    grid-row: start / end;
+}
+.item:nth-of-type(2) {
+    grid-column: line3 / span 2;
+    grid-row: start / end;
+}
+.item:nth-of-type(3) {
+    grid-column: line5 / end;
+    grid-row: start / span 1;
+}
+.item:nth-of-type(4) {
+    grid-column: line5 / span 1;
+    grid-row: line1 / end;
+}
+.item:nth-of-type(5) {
+    grid-column: line6 / end;
+    grid-row: line1 / end;
+}
